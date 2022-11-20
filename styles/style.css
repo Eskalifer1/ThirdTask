@@ -10,6 +10,7 @@ html, body {
     height: 100%;
     width: 100%;
     color: #1F1F1F;
+    overflow-x: hidden;
 }
 body.lock{
     overflow-y: hidden;
@@ -539,6 +540,7 @@ ul, ol{
     font-size: 40px;
     line-height: 48px;
     color: #fff;
+    text-align: center;
     margin-bottom: 30px;
 }
 .hero__bottom img{
@@ -597,10 +599,15 @@ ul, ol{
 
 .instagram{
     margin-bottom: 80px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    padding: 0 20px;
+}
+.instagram .wrap{
     position: relative;
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; */
+    min-width: 0;
 }
 .instagram .instagram__title{
     font-family: 'Cormorant';
@@ -616,20 +623,22 @@ ul, ol{
     text-decoration-line: underline;
     color: #FF8126;
 }
-.instagram .swiper{
+.instagram .wrap .swiper{
     min-height: 200px;
-    display: flex;
+    /* display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
     max-width: 1050px;
     margin: 0;
-}
-.instagram .swiper .swiper-wrapper{
-    justify-self: center;
+    padding: 0;
+    min-width: 0;
 }
 .swiper-button-prev::after, .swiper-button-next::after{
     color: #fff;
     font-size: 15px !important;
+}
+.swiper-wrapper{
+    min-width: 0;
 }
 .swiper-button-prev::after{
     color: #b2b2b2;
@@ -643,18 +652,23 @@ ul, ol{
 .swiper-button-prev{
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid #B3B3B3;
-    left: 9.5% !important;
+    left: 0% !important;
 }
 .swiper-button-next{
     background: #FF8126;
-    right: 9.5% !important;
+    right: 0% !important;
 }
 .swiper-slide{
     background: #FFFFFF;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
-    min-width: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 186px;
+    /* min-height: 186px; */
+    overflow: hidden;
+    padding: 15px 50px;
+}
+.swiper-slide img{
+    height: 156px;
+    width: 156px;
 }
