@@ -5,7 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Food Store Site</title>
-    <link rel="stylesheet" href="styles/style.css">
+    <link rel="preload" as = "image" href="images/hero.WebP">
+    <link rel="preload stylesheet" as = "style" href="styles/style.css">
+    <link rel="preload" as = "image" href="images/foodMaker.WebP">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
 </head>
 <body>
     <section class = "advertisement">
@@ -18,7 +21,7 @@
                 <span></span>
             </div>
             <nav class="nav">
-                <a href="#" class="logo navbar__brand"><img src="images/logomain.svg" alt="logo"></a>
+                <a href="#" class="logo navbar__brand"><img src="images/logomain.svg" alt="logo" style="width: 110px; height:95px;"></a>
                 <div class="navbar__wrap">
                     <ul class="navbar__menu">
                         <li class="navbar__item "><a class = "arrow" href="#">Occasions</a>
@@ -66,7 +69,7 @@
             <h2 class="offers__title">Latest <span>Offers</span></h2>
             <div class="offers__list">
                 <div class="offers__item">
-                    <div class="conatiner">
+                    <div class="container">
                         <img src="images/Pizza.WebP" alt="pizza">
                     </div>
                     <div class="text__container">
@@ -79,7 +82,7 @@
                     </div>
                 </div>
                 <div class="offers__item">
-                    <div class="conatiner">
+                    <div class="container">
                         <img src="images/pancakes.WebP" alt="Pancakes">
                     </div>
                     <div class="text__container">
@@ -92,7 +95,7 @@
                     </div>
                 </div>
                 <div class="offers__item">
-                    <div class="conatiner">
+                    <div class="container">
                         <img src="images/Avocado.WebP" alt="Avocado">
                     </div>
                     <div class="text__container">
@@ -105,7 +108,7 @@
                     </div>
                 </div>
                 <div class="offers__item">
-                    <div class="conatiner">
+                    <div class="container">
                         <img src="images/Orange.WebP" alt="Bunch of Orange">
                     </div>
                     <div class="text__container">
@@ -120,5 +123,112 @@
             </div>
         </div>
     </section>
+    <section class="reasons">
+        <div class="wrap">
+            <h2 class="reasons__title">Why Choose <span>the Premium Bakery Quality</span></h2>
+            <div class="reasons__list">
+                <div class="reasons__item">
+                    <img src="images/telescope1.svg" alt="telescope">
+                    <div class="reasons__text">
+                        <h3 class="reasons__item__title">Discover new flavours & people</h3>
+                        <p class="reasons__description">Discover new tastes, flavours, snacks and recipes to make wonderful meals. Also find out where your food comes from and who makes it.</p>
+                    </div>
+                </div>
+                <div class="reasons__item">
+                    <img src="images/wholesale1.svg" alt="wholesale">
+                    <div class="reasons__text">
+                        <h3 class="reasons__item__title">Buy <br>wholesale</h3>
+                        <p class="reasons__description">We offer bulk formats, variety cases, and discovery boxes so you can save money on delicious foods by buying at wholesale prices. </p>
+                    </div>
+                </div>
+                <div class="reasons__item">
+                    <img src="images/support1.svg" alt="support">
+                    <div class="reasons__text">
+                        <h3 class="reasons__item__title">Support your community </h3>
+                        <p class="reasons__description">By buying in bulk from local and Canadian producers you are helping grow our local food ecosystem, creating jobs, and supporting families and entrepreneurs in your community.</p>
+                    </div>
+                </div>
+                <div class="reasons__item">
+                    <img src="images/winner1.svg" alt="winner">
+                    <div class="reasons__text">
+                        <h3 class="reasons__item__title">Enjoy the best quality</h3>
+                        <p class="reasons__description">We only offer great tasting, all natural foods that are better for you, and organic if possible.</p>
+                    </div>
+                </div>
+                <div class="reasons__item">
+                    <img src="images/heart1.svg" alt="heart">
+                    <div class="reasons__text">
+                        <h3 class="reasons__item__title">Enjoy Club Level Service</h3>
+                        <p class="reasons__description">As a member of our club, we will make sure you are delighted with our service or we will make it right!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="maker">
+        <div class="wrap">
+            <div class="maker__top">
+                <h2 class="maker__title"><span>Who Makes</span> Your Food</h2>
+                <p class="maker__description">Our mission is to help grow the local food ecosystem in BC and across Canada.  Why? </p>
+                <ul class="maker__list">
+                    <li class="maker__item">Because it connects us to the land we live on, and to the people who live here.</li>
+                    <li class="maker__item">Because it’s more meaningful to cook and eat something made by a person nearby than by some distant corporation</li>
+                    <li class="maker__item">Because good local food makes our corner of the world a better place to live</li>
+                    <li class="maker__item">Because it supports local jobs</li>
+                    <li class="maker__item">Because it makes more sense for the environment</li>
+                </ul>
+                <button class="button button__maker">Discover our Producers</button>
+            </div>
+            <div class="maker__bottom">
+                <img src="images/foodMaker.WebP" alt="blueberry">
+            </div>
+        </div>
+    </section>
+    <section class="hero__bottom">
+        <h2 class="hero__bottom__title">Our Charity Partner, City Bakery</h2>
+        <img src="images/logo__white.svg" alt="white logo">
+        <button class="button button__hero__bottom">Learn more about City Bakery</button>
+    </section>
+    <section class="surprise">
+        <div class="wrap">
+            <div class="surprise__top"><img src="images/basket.WebP" alt="basket"></div>
+            <div class="surprise__bottom">
+                <h2 class="surprise__title">Surprise Someone <br><span>Working from Home</span></h2>
+                <p class="surprise__description">
+                    Do you have a colleague or family member working hard at home? Our Working From Home box of snacks and drinks is the perfect way to put a smile on their face, delivered direct to their door. <br>
+                    <br>To buy for a large group of people, get in touch and we can discuss bespoke bundles and personalised messaging.
+                </p>
+                <button class="button surprise__button">Buy Now</button>
+            </div>
+        </div>
+    </section>
+    <section class="instagram">
+        <div class="wrap">
+            <h2 class="instagram__title"><span>@PremiumBakeryQuality</span> on Instagram</h2>
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="images/salad.WebP" alt="salad">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/carrots.WebP" alt="carrots">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/Croissant.WebP" alt="Croissant">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/Lemon.WebP" alt="Lemon">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/Melon.WebP" alt="Melon">
+                    </div>
+                </div>
+            </div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+        </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="scripts/script.js"></script>
 </body>
 </html>
