@@ -19,12 +19,10 @@ body.resize.lock nav{
     overflow-y: scroll;
 }
 .wrap{
-    max-width: 1170px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 .logo{
-    width: 110px;
-    height: 95px;
     display: inline-block;
     transition: .3s;
 }
@@ -603,11 +601,6 @@ ul, ol{
 }
 .instagram .wrap{
     position: relative;
-    /* display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column; */
-    min-width: 0;
 }
 .instagram .instagram__title{
     font-family: 'Cormorant';
@@ -625,20 +618,12 @@ ul, ol{
 }
 .instagram .wrap .swiper{
     min-height: 200px;
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
     max-width: 1050px;
-    margin: 0;
     padding: 0;
-    min-width: 0;
 }
 .swiper-button-prev::after, .swiper-button-next::after{
     color: #fff;
     font-size: 15px !important;
-}
-.swiper-wrapper{
-    min-width: 0;
 }
 .swiper-button-prev::after{
     color: #b2b2b2;
@@ -664,11 +649,76 @@ ul, ol{
     display: flex;
     justify-content: center;
     align-items: center;
-    /* min-height: 186px; */
     overflow: hidden;
     padding: 15px 50px;
 }
 .swiper-slide img{
     height: 156px;
     width: 156px;
+}
+
+.tell{
+    min-height: 260px;
+    background: #FF81261F url("../images/Tell.WebP") center/cover no-repeat;
+    text-align: center;
+    padding: 60px 20px;
+    margin-bottom: 60px;
+}
+.tell .tell__title{
+    font-family: 'Cormorant';
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 48px;
+    color: #1F1F1F;
+    margin-bottom: 40px;
+}
+.tell .social__buttons img{
+    width: 60px;
+    height: 60px;
+    margin: 0 15px;
+    cursor: pointer;
+    transition:.3s;
+    margin-bottom: 10px;
+}
+.tell .social__buttons img:hover{
+    transform: scale(1.2);
+}
+
+.footer{
+    padding: 0 20px;
+}
+.footer .wrap{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.footer__item{
+    margin-right: 83px;
+    margin-bottom: 20px;
+}
+.footer__item .footer__title{
+    font-family: 'Poppins';
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 22px;
+    margin-bottom: 15px;
+}
+.footer__item .footer__list{
+    font-family: 'Poppins';
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 22px;
+    color: #3D3D3D;
+}
+.footer__item:last-child{
+    margin-right: 0;
+}
+.footer__list li{
+    padding: 5px 0;
+}
+.footer__list li{
+    transition: .3s;
+}
+.footer__list li a:hover{
+    color: #FF8126;
 }
