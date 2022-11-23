@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Food Store Site</title>
-    <link rel="preload" as = "image" href="images/hero.WebP">
+    <link rel="preload" as = "image" href="images/hero.WebP" >
     <link rel="preload stylesheet" as = "style" href="styles/style.css">
     <link rel="preload" as = "image" href="images/foodMaker.WebP">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
@@ -13,7 +13,7 @@
 <body>
     <section class = "advertisement">
         <p>Free Delivery over $100. Gift with Purchase over $150</p>
-        <img src="images/close.svg" alt="close button">
+        <img class = "close" src="images/close.svg" alt="close button">
     </section>
     <header class="header">
         <div class="wrap">
@@ -46,8 +46,8 @@
                         <li class="navbar__item"><a href="#" >About Us</a></li>
                     </ul>
 
+                    <a href="#" id ="loupe"><img src="images/loupe.svg" alt="Search Button"></a>
                     <div class="navbar__buttons">
-                        <a href="#"><img src="images/loupe.svg" alt="Search Button"></a>
                         <a href="#"><img src="images/user.svg" alt="User button"></a>
                         <a href="#" id = "cart"><img src="images/shopping-cart.svg" alt="Cart"></a>
                     </div>
@@ -137,7 +137,7 @@
                 <div class="reasons__item">
                     <img src="images/wholesale1.svg" alt="wholesale">
                     <div class="reasons__text">
-                        <h3 class="reasons__item__title">Buy <br>wholesale</h3>
+                        <h3 class="reasons__item__title">Buy <br class="br">wholesale</h3>
                         <p class="reasons__description">We offer bulk formats, variety cases, and discovery boxes so you can save money on delicious foods by buying at wholesale prices. </p>
                     </div>
                 </div>
@@ -170,6 +170,7 @@
             <div class="maker__top">
                 <h2 class="maker__title"><span>Who Makes</span> Your Food</h2>
                 <p class="maker__description">Our mission is to help grow the local food ecosystem in BC and across Canada.  Why? </p>
+                <div id = "firstMaker" class="maker__bottom"></div>
                 <ul class="maker__list">
                     <li class="maker__item">Because it connects us to the land we live on, and to the people who live here.</li>
                     <li class="maker__item">Because it’s more meaningful to cook and eat something made by a person nearby than by some distant corporation</li>
@@ -179,9 +180,7 @@
                 </ul>
                 <button class="button button__maker">Discover our Producers</button>
             </div>
-            <div class="maker__bottom">
-                <img src="images/foodMaker.WebP" alt="blueberry">
-            </div>
+            <div id = "secondMaker" class="maker__bottom"></div>
         </div>
     </section>
     <section class="hero__bottom">
@@ -241,7 +240,7 @@
     </section>
     <footer class="footer">
         <div class="wrap">
-            <div class="footer__item">
+            <div class="footer__item" id = "logo__footer">
                 <a href="#" class="logo"><img src="images/logomain.svg" alt="logo" style="width: 110px; height:95px;"></a>
             </div>
             <div class="footer__item">

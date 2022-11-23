@@ -18,6 +18,9 @@ const swiper = new Swiper(".swiper", {
         890:{
             slidesPerView: 4.5
         },
+        810:{
+            slidesPerView: 4.3
+        },
         780:{
             slidesPerView: 4
         },
@@ -34,10 +37,21 @@ const swiper = new Swiper(".swiper", {
             slidesPerView: 2
         },
         360:{
-            slidesPerView: 1.5
+            slidesPerView: 1.5,
         },
         320:{
             slidesPerView: 1
         }
     }
-})
+});
+const close = document.querySelector(".close");
+const burger = document.querySelector(".header__menu")
+close.addEventListener("click", function(){
+    document.querySelector(".advertisement").classList.add("none")
+}, {passive: true})
+burger.addEventListener("click", function(){
+    burger.classList.toggle("active");
+    document.querySelector("body").classList.toggle("lock");
+    document.querySelector(".navbar__menu").classList.toggle("active");
+    document.querySelector(".navbar__buttons").classList.toggle("active");
+}, {passive: true})
