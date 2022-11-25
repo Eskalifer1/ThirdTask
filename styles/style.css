@@ -17,9 +17,9 @@ html, body {
 body.lock{
     overflow-y: hidden;
 }
-/* body.resize.lock{
+body.resize.lock .header{
     overflow-y: scroll;
-} */
+}
 .wrap{
     max-width: 1200px;
     width: 100%;
@@ -90,7 +90,6 @@ ul, ol{
     cursor: pointer;
 }
 
-/* header */
 .header{
     min-height: 115px;
     display: flex;
@@ -205,7 +204,7 @@ ul, ol{
     position: absolute;
     display: none;
     box-sizing: border-box;
-    z-index: 10;
+    z-index: 25;
 }
 .header .wrap .nav .navbar__wrap .navbar__menu .navbar__item .hidden__list .orange{
     display: block;
@@ -775,12 +774,12 @@ ul, ol{
     }
 }
 @media(max-width:1033px){
-
     .header {
         transition: .3s;
     }
     .header.active{
         min-height: 100vh;
+        height: 100%;
         display: flex;
         padding-top: 120px;
     }
@@ -812,6 +811,9 @@ ul, ol{
         align-self: flex-start;
         width: 100%;
         top: 0;
+    }
+    .header .wrap .nav .navbar__wrap .navbar__menu .navbar__item .hidden__list{
+        position: static;
     }
     .header .wrap .nav .navbar__wrap .navbar__buttons{
         top: -400px;
@@ -923,7 +925,7 @@ ul, ol{
     #loupe{
         width: 32px;
         height: 32px;
-        top: 38%;
+        top: 42px;
     }
     #loupe img{
         width: 12px;
