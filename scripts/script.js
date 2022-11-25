@@ -45,13 +45,23 @@ const swiper = new Swiper(".swiper", {
     }
 });
 const close = document.querySelector(".close");
-const burger = document.querySelector(".header__menu")
+const burger = document.querySelector(".header__menu");
+const header = document.querySelector(".header");
 close.addEventListener("click", function(){
     document.querySelector(".advertisement").classList.add("none")
+    header.style.top = 0;
 }, {passive: true})
 burger.addEventListener("click", function(){
     burger.classList.toggle("active");
     document.querySelector("body").classList.toggle("lock");
-    document.querySelector(".navbar__menu").classList.toggle("active");
-    document.querySelector(".navbar__buttons").classList.toggle("active");
+    header.classList.toggle("active");
 }, {passive: true})
+function orientationChecker(){
+    windowHeight = document.documentElement.clientHeight;
+    windowWidth = document.documentElement.clientWidth;
+    if(windowWidth > (windowHeight - 60)){
+        document.querySelector("body").classList.add("resize");
+    } else document.querySelector("body").classList.remove("resize");
+}
+window.addEventListener("load", orientationChecker, {passive: true})
+window.addEventListener('resize',orientationChecker, {passive: true});

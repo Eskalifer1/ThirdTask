@@ -12,15 +12,17 @@ html, body {
     color: #1F1F1F;
     overflow-x: hidden;
     background-color: #fff;
+    position: relative;
 }
 body.lock{
     overflow-y: hidden;
 }
-body.resize.lock nav{
+/* body.resize.lock{
     overflow-y: scroll;
-}
+} */
 .wrap{
     max-width: 1200px;
+    width: 100%;
     margin: 0 auto;
 }
 .logo{
@@ -58,15 +60,19 @@ ul, ol{
 .none{
     display: none !important;
 }
-.hidden{
-    visibility: hidden;
-}
 .advertisement{
     background-color: #C2E8CE;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 50px;
+    width: 100%;
+    top: 0%;
+    position: sticky;
+    z-index: 20;
+}
+.advertisement .wrap{
+    padding: 0 20px;
     position: relative;
 }
 
@@ -75,23 +81,29 @@ ul, ol{
     font-weight: 500;
     font-size: 14px;
     line-height: 21px;
+    text-align: center;
 }
 .advertisement img{
     position: absolute;
-    top: 32%;
-    right: 4%;
+    top: 0;
+    right: 15px;
     cursor: pointer;
 }
 
 /* header */
 .header{
-    min-height: 135px;
+    min-height: 115px;
     display: flex;
     align-items: center;
+    flex-direction: column;
+    top: 50px;
+    position: sticky;
+    z-index: 20;
+    background-color: #fff;
 }
 .header .wrap{
     flex-basis: 100%;
-    padding: 0 20px;
+    padding: 10px 20px;
 }
 .header .wrap .header__menu{
     position: absolute;
@@ -137,7 +149,7 @@ ul, ol{
     align-items: center;
     justify-content: space-between;
 }
-.header .wrap .nav .nav__brand{
+.header .wrap .nav .navbar__brand{
     flex-basis: 13%;
 }
 
@@ -193,6 +205,7 @@ ul, ol{
     position: absolute;
     display: none;
     box-sizing: border-box;
+    z-index: 10;
 }
 .header .wrap .nav .navbar__wrap .navbar__menu .navbar__item .hidden__list .orange{
     display: block;
@@ -309,16 +322,30 @@ ul, ol{
 
 /* Hero */
 .hero{
-    max-width: 100%;
-    background: url("../images/hero.WebP") center/cover no-repeat;
+    width: 100%;
+    height: 500px;
     min-height: 500px;
     display: flex;
     margin-bottom: 100px;
+    position: relative;
+    z-index: 1;
+}
+.hero::before{
+    width: 100%;
+    height: 100%;
+    content: "";
+    background: url("../images/hero.WebP") center/cover no-repeat;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    position: absolute;
 }
 
 .hero .wrap{
     align-self:center;
-    justify-self: flex-start;
+    justify-self: center;
+    display: flex;
+    align-items: center;
     height: 100%;
     width: 100%;
     padding-bottom: 100px;
@@ -711,11 +738,10 @@ ul, ol{
 .footer .wrap{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content:space-evenly;
 }
 .footer__item{
-    margin-right: 83px;
-    margin-bottom: 20px;
+    margin: 0 20px 20px;
 }
 .footer__item .footer__title{
     font-family: 'Poppins';
@@ -749,63 +775,76 @@ ul, ol{
     }
 }
 @media(max-width:1033px){
+
     .header {
-        position: relative;
+        transition: .3s;
     }
-    .header .wrap .nav{
+    .header.active{
+        min-height: 100vh;
+        display: flex;
+        padding-top: 120px;
+    }
+    .header .wrap .nav .navbar__brand{
+        position: absolute;
+        left: 50%;
+        top: 10px;
+        transform: translateX(-50%);
+    }
+    .header.active .wrap{
+        padding: 0;
+    }
+    .header.active .wrap .nav{
+        display: block;
         justify-content: center;
+        width: 100%;
     }
-    .header .wrap .nav .navbar__wrap{
-        flex-basis: 0;
+    .header.active .wrap .nav .navbar__wrap{
+        flex-direction: column-reverse;
+        width: 100%;
     }
     .header .wrap .nav .navbar__wrap .navbar__menu{
-        position: absolute;
-        left: -100%;
-        bottom: -420px;
+        top: -400px;
+        position: relative;
+    }
+    .header.active .wrap .nav .navbar__wrap .navbar__menu{
         flex-direction: column;
-        background: #fff;
-        transition: .5s;
+        justify-self: flex-start;
+        align-self: flex-start;
         width: 100%;
-        z-index: 10;
-
+        top: 0;
     }
     .header .wrap .nav .navbar__wrap .navbar__buttons{
-        position: absolute;
-        display: flex;
-        bottom: -100px;
-        left: -100%;
-        background: #fff;
-        transition: .5s;
-        width: 100%;
-        justify-content: center;
-        padding-top: 20px;
-        padding-bottom: 40px;
-        z-index: 10;
+        top: -400px;
+        position: relative;
+    }
+    .header.active .wrap .nav .navbar__wrap .navbar__buttons{
+        top: 0%;
     }
     .header .wrap .header__menu{
         display: block;
-        top: 37%;
-        right: 4%;
+        top: 42px;
+        right: 16px;
+        z-index: 999;
     }
-    .header .wrap .header__menu.active span{
+    .header.active .wrap .header__menu span{
         width: 20px;
         border-radius: 27%;
     }
-    .header .wrap .header__menu.active::before{
+    .header.active .wrap .header__menu::before{
         height: 20px;
         border-radius: 27%;
     }
-    .header .wrap .header__menu.active::after{
+    .header.active .wrap .header__menu::after{
         opacity: 0;
     }
-    .header .wrap .header__menu.active{
+    .header.active .wrap .header__menu{
         transform: rotate(45deg);
     }
     #loupe{
         display: block !important;
         position: absolute;
-        top: 27%;
-        left: 4%;
+        top: 26px;
+        left: 16px;
     }
     .header .wrap .nav .navbar__wrap .navbar__menu.active{
         left: 0;
@@ -813,16 +852,11 @@ ul, ol{
     .header .wrap .nav .navbar__wrap .navbar__buttons.active{
         left: 0;
     }
-    /* .hero{
-        transform: rotate(90deg);
-    }
-    .hero > *{
-        transform: rotate(-90deg);
-    } */
 }
 @media(max-width:810px){
     .surprise .wrap{
         justify-content: center;
+        align-items: center;
     }
     .surprise__top{
         display: none;
@@ -830,7 +864,16 @@ ul, ol{
     }
     .surprise__bottom{
         flex-basis: 100%;
-        padding: 0 64px;
+        padding: 0 62px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    .surprise__bottom .surprise__title br{
+        display: none;
+    }
+    .surprise__bottom .surprise__button{
+       align-self: center;
     }
     .swiper-button-next, .swiper-button-prev{
         display: none !important;
@@ -848,10 +891,19 @@ ul, ol{
         height: 300px;
         margin-bottom: 20px;
     }
-}
-@media(max-width:727px){
     .footer .wrap{
-        justify-content: flex-start;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media(max-width:650px){
+    .footer .wrap{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media(max-width:570px){
+    .footer .wrap{
+        grid-template-columns: 1fr;
     }
     .footer .wrap .footer__item{
         display: block;
@@ -862,11 +914,11 @@ ul, ol{
 @media(max-width:500px){
     .advertisement{
         justify-content: flex-start;
-        padding-left: 16px;
     }
     .advertisement p{
         font-size: 10px;
         line-height: 15px;
+        text-align: start;
     }
     #loupe{
         width: 32px;
@@ -877,20 +929,22 @@ ul, ol{
         width: 12px;
         height: 12px;
     }
-    .header{
-        margin-bottom: 20px;
+    .hero {
+        height: 435px;
+        padding-top: 20px;
     }
-    .hero{
+    .hero::before{
         width: 500px;
-        transform: matrix(0, 1, 1, 0, 0, 0);
-        margin-bottom: 30px;
-    }
-    .hero > *{
-        transform:scaleX(-1) rotate(90deg) translateY(-100px);
+        transform: rotate(90deg);
+        background-position: right 25% bottom 50%;
     }
     .hero .wrap{
-        align-self: center;
+        justify-content: center;
+        align-items: flex-start;
         text-align: center;
+        padding: 0;
+    }
+    .hero .wrap .hero__text{
         padding: 0;
     }
     .hero .wrap .hero__title{
@@ -947,7 +1001,7 @@ ul, ol{
         padding: 8px 28px 10px;
     }
     .surprise__bottom{
-        padding: 0 16px;
+        padding: 0 14px;
     }
     .instagram .instagram__title{
         font-size: 29px;
