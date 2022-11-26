@@ -498,14 +498,19 @@ ul, ol{
     margin-bottom: 90px;
 }
 .maker .wrap{
-    display: flex;
+    display: grid;
     padding: 0 20px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+    "maker__top__text maker__bottom"
+    "maker__list maker__bottom";
 }
-.maker__top{
+.maker__top__text{
     flex-basis: 50%;
     padding-right: 15px;
+    grid-area: maker__top__text;
 }
-.maker__top .maker__title{
+.maker__top__text .maker__title{
     font-family: 'Cormorant';
     font-weight: 700;
     font-size: 40px;
@@ -513,10 +518,10 @@ ul, ol{
     color: #1F1F1F;
     margin-bottom: 20px;
 }
-.maker__top .maker__title span{
+.maker__top__text .maker__title span{
     color: #FF8126;
 }
-.maker__top .maker__description{
+.maker__top__text .maker__description{
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 500;
@@ -525,7 +530,10 @@ ul, ol{
     color: #1F1F1F;
     margin-bottom: 40px;
 }
-.maker__top .maker__item{
+.maker__list{
+    grid-area: maker__list;
+}
+.maker__list .maker__item{
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
@@ -558,16 +566,17 @@ ul, ol{
     left: 5px;
     top: 0px;
 }
-.maker__top .button__maker{
+.maker__list .button__maker{
     padding: 8px 30px 10px 30px;
 }
 .maker__bottom{
+    grid-area: maker__bottom;
     flex-basis: 50%;
     background: url("../images/foodMaker.WebP") center/cover no-repeat;
 }
-#firstMaker{
+/* #firstMaker{
     display: none;
-}
+} */
 
 .hero__bottom{
     background: #6090C3 url('../images/hero__bottom.WebP') center/cover no-repeat;
@@ -880,9 +889,13 @@ ul, ol{
     .swiper-button-next, .swiper-button-prev{
         display: none !important;
     }
-    #firstMaker{
-        display: block;
-    }
+   .maker .wrap{
+    grid-template-columns: 1fr;
+    grid-template-areas:
+    "maker__top__text"
+    "maker__bottom"
+    "maker__list";
+   }
     #secondMaker{
         display: none;
     }
