@@ -830,6 +830,7 @@ ul, ol{
     }
     .header.active .wrap .nav .navbar__wrap .navbar__buttons{
         top: 0%;
+        margin-bottom: 20px;
     }
     .header .wrap .header__menu{
         display: block;
@@ -856,12 +857,6 @@ ul, ol{
         position: absolute;
         top: 26px;
         left: 16px;
-    }
-    .header .wrap .nav .navbar__wrap .navbar__menu.active{
-        left: 0;
-    }
-    .header .wrap .nav .navbar__wrap .navbar__buttons.active{
-        left: 0;
     }
 }
 @media(max-width:810px){
