@@ -49,9 +49,10 @@ const burger = document.querySelector(".header__menu");
 const header = document.querySelector(".header");
 const body = document.querySelector("body");
 close.addEventListener("click", function(){
-    document.querySelector(".advertisement").classList.add("none")
+    document.querySelector(".advertisement").classList.add("none");
     header.style.top = 0;
-}, {passive: true})
+    header.style.marginBottom = "-1px"
+})
 burger.addEventListener("click", function(){
     burger.classList.toggle("active");
     body.classList.toggle("lock");
