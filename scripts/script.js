@@ -57,7 +57,7 @@ hiddenLists.forEach(list =>{
 close.addEventListener("click", function(){
     document.querySelector(".advertisement").classList.add("none");
     header.style.top = 0;
-    header.style.marginBottom = "-1px"
+    header.style.paddingBottom = "0px"
 })
 burger.addEventListener("click", function(){
     burger.classList.toggle("active");

@@ -784,6 +784,7 @@ ul, ol{
         height: 100%;
         display: flex;
         padding-top: 120px;
+        padding-bottom: 50px;
     }
     .header .wrap .nav .navbar__brand{
         position: absolute;
