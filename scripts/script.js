@@ -48,6 +48,12 @@ const close = document.querySelector(".close");
 const burger = document.querySelector(".header__menu");
 const header = document.querySelector(".header");
 const body = document.querySelector("body");
+const hiddenLists = document.querySelectorAll(".arrow");
+hiddenLists.forEach(list =>{
+    list.addEventListener("click", function(){
+        list.classList.toggle("initial");
+    })
+})
 close.addEventListener("click", function(){
     document.querySelector(".advertisement").classList.add("none");
     header.style.top = 0;
