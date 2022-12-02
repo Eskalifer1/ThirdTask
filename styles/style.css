@@ -189,6 +189,9 @@ ul, ol{
 .header .wrap .nav .navbar__wrap .navbar__menu .navbar__item .arrow{
     position: relative;
 }
+.header .wrap .nav .navbar__wrap .navbar__menu .navbar__item .arrow.initial::after{
+    transform: rotateZ(90deg);
+}
 .header .wrap .nav .navbar__wrap .navbar__menu .navbar__item .arrow::after{
     content: ">";
     position: absolute;
@@ -197,7 +200,8 @@ ul, ol{
     font-size: 15px;
     line-height: 22px;
     transition: .3s;
-    transform: rotateZ(90deg);
+    margin-left: 10px;
+    transform: rotateZ(-90deg);
 }
 .header .wrap .nav .navbar__wrap .navbar__menu .navbar__item .arrow ~ .hidden__list{
     display: flex;
@@ -231,12 +235,9 @@ ul, ol{
     background-color: #FF8126;
     color: #fff;
 }
-.header .wrap .nav .navbar__wrap .navbar__menu .navbar__item:hover .arrow::after{
-    color: #fff;
-}
-.header .wrap .nav .navbar__wrap .navbar__menu .navbar__item:focus-within .arrow::after{
-    color: #fff;
-}
+.header .wrap .nav .navbar__wrap .navbar__menu .navbar__item:not(:has(:focus-within)) .arrow::after{
+    transform: rotateZ(90deg);
+} 
 .header .wrap .nav .navbar__wrap .navbar__buttons {
     display: flex;
     align-items: center;
@@ -464,10 +465,6 @@ ul, ol{
 }
 
 .reasons__list{
-    /* display: flex;
-    
-    justify-content: flex-start;
-    flex-wrap: wrap; */
     display: grid;
     grid-gap: 20px;
     grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
@@ -579,9 +576,6 @@ ul, ol{
     flex-basis: 50%;
     background: url("../images/foodMaker.WebP") center/cover no-repeat;
 }
-/* #firstMaker{
-    display: none;
-} */
 
 .hero__bottom{
     background: #6090C3 url('../images/hero__bottom.WebP') center/cover no-repeat;
