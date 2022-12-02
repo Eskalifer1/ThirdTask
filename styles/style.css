@@ -88,6 +88,8 @@ ul, ol{
     top: 0;
     right: 15px;
     cursor: pointer;
+    width: 16px;
+    height: 16px;
 }
 
 .header{
@@ -364,6 +366,7 @@ ul, ol{
 
 .offers{
     margin-bottom: 60px;
+    padding-inline: 20px;
 }
 .offers .offers__title{
     font-family: 'Cormorant';
@@ -383,13 +386,17 @@ ul, ol{
     align-items: center;
     justify-content:center;
     flex-wrap: wrap;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    place-items: center;
+    width: 100%;
 }
 .offers .offers__list .offers__item{
     background: #F7F5F0;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
     border-radius: 20px;
-    max-width: 270px;
-    margin: 0 15px;
+    width: 100%;
     margin-bottom: 20px;
 }
 .offers .offers__list .offers__item .container{
@@ -398,7 +405,7 @@ ul, ol{
 }
 .offers .offers__list .offers__item .container img{
     height: 100%;
-    max-width: 100%;
+    width: 100%;
 }
 .offers .offers__list .offers__item .text__container{
     padding: 0px 20px 30px 20px;
@@ -441,6 +448,7 @@ ul, ol{
 
 .reasons{
     margin-bottom: 80px;
+    padding-inline: 20px;
 }
 .reasons .reasons__title{
     font-family: 'Cormorant';
@@ -456,13 +464,17 @@ ul, ol{
 }
 
 .reasons__list{
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    /* display: flex;
+    
+    justify-content: flex-start;
+    flex-wrap: wrap; */
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    place-items: center;
 }
 .reasons__list .reasons__item{
-    max-width: 210px;
-    margin: 0 15px;
+    width: 100%;
     margin-bottom: 20px;
 }
 .reasons__list .reasons__item img{
@@ -699,7 +711,8 @@ ul, ol{
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    padding: 15px 50px;
+    padding: 20px 50px;
+    margin-block: 5px;
 }
 .swiper-slide img{
     height: 156px;
@@ -909,10 +922,20 @@ ul, ol{
         display: grid;
         grid-template-columns: repeat(3, 1fr);
     }
+    .maker__list{
+        display: flex;
+        flex-direction: column;
+    }
+    .maker__list .button__maker{
+        margin-inline: auto;
+    }
 }
 @media(max-width:650px){
     .footer .wrap{
         grid-template-columns: 1fr 1fr;
+    }
+    .offers .offers__list{
+        grid-template-columns: repeat(auto-fill, minmax(270px, .5fr));
     }
 }
 @media(max-width:570px){
@@ -946,6 +969,7 @@ ul, ol{
     .hero {
         height: 435px;
         padding-top: 20px;
+        margin-bottom: 30px;
     }
     .hero::before{
         width: 500px;
@@ -970,6 +994,9 @@ ul, ol{
         line-height: 22px;
         margin-bottom: 10px;
     }
+    .maker .maker__title{
+        font-size: 30px;
+    }
 
     .offers{
         margin-bottom: 30px;
@@ -978,6 +1005,9 @@ ul, ol{
         font-size: 30px;
         line-height: 36px;
         margin-bottom: 20px;
+    }
+    .offers .offers__list{
+        justify-content: center;
     }
     .offers .offers__list .offers__item:last-child{
         display: none;
@@ -1014,12 +1044,19 @@ ul, ol{
     .hero__bottom .button__hero__bottom{
         padding: 8px 28px 10px;
     }
+    .surprise .surprise__title{
+        font-size: 30px;
+    }
     .surprise__bottom{
         padding: 0 14px;
     }
     .instagram .instagram__title{
         font-size: 29px;
         line-height: 36px;
+    }
+    .swiper-slide img{
+        height: 218px;
+        width: 218px;
     }
     .tell{
         margin-bottom: 50px;
@@ -1028,5 +1065,12 @@ ul, ol{
         display: block;
         margin: 0 auto 70px auto;
         text-align: center;
+    }
+    .footer__item .footer__list{
+        font-size: 20px;
+    }
+    .footer__item .footer__title{
+        font-size: 20px;
+        line-height: 30px;
     }
 }

@@ -31,13 +31,13 @@ const swiper = new Swiper(".swiper", {
             slidesPerView: 3
         },
         490:{
-            slidesPerView: 2.5
-        },
-        400:{
             slidesPerView: 2
         },
+        400:{
+            slidesPerView: 1.5
+        },
         360:{
-            slidesPerView: 1.5,
+            slidesPerView: 1.25,
         },
         320:{
             slidesPerView: 1
@@ -67,7 +67,7 @@ burger.addEventListener("click", function(){
 function orientationChecker(){
     windowHeight = document.documentElement.clientHeight;
     windowWidth = document.documentElement.clientWidth;
-    if(windowWidth > (windowHeight)){
+    if(windowWidth > (windowHeight-125)){
         body.classList.add("resize");
     } else body.classList.remove("resize");
 }
